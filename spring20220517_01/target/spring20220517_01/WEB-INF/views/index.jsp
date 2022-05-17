@@ -11,6 +11,11 @@
     <title>Title</title>
 </head>
 <body>
-<h2>ㅎㅇㅎㅇ</h2>
+<h2>index.jsp</h2>
+<%-- server에게 /welcome 주소를 get방식으로 요청 --%>
+<a href="welcome">welcome 페이지로 이동</a>
+<%-- .jsp에서 .jsp로 이동X. 무조건 Controller로 요청해서 Controller가 해당 화면 띄어줌 --%>
+<%-- 링크 클릭하면 form-ex.jsp 출력 --%>
+<a href="form-ex">form-ex 페이지로 이동</a>
 </body>
 </html>
