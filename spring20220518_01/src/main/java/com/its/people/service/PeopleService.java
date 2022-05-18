@@ -24,4 +24,13 @@ public class PeopleService {
             return false;
         }
     }
+
+    public boolean save2(PeopleDTO peopleDTO) {
+        int saveResult = peopleRepository.save2(peopleDTO);
+        if (saveResult > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

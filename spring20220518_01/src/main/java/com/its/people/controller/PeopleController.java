@@ -42,7 +42,7 @@ public class PeopleController {
 //        peopleDTO.setName(name);
 //        peopleDTO.setAge(age);
         System.out.println("peopleDTO = " + peopleDTO);
-        boolean saveResult = peopleService.save2();
+        boolean saveResult = peopleService.save2(peopleDTO);
         if (saveResult) {
             System.out.println("저장성공");
             return "index";
@@ -50,6 +50,5 @@ public class PeopleController {
             System.out.println("저장실패");
             return "save-fail";
         }
-        return null;
     }
 }
