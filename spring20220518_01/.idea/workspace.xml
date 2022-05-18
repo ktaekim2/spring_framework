@@ -9,18 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cf5e889-db5c-405d-be83-e283a52bf043" name="Changes" comment="insert 성공/실패 여부 처리">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
+    <list default="true" id="3cf5e889-db5c-405d-be83-e283a52bf043" name="Changes" comment="list 출력">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/people/controller/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/people/controller/PeopleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/people/repository/PeopleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/people/repository/PeopleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/people/service/PeopleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/people/service/PeopleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/dataMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/dataMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/dataMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/dataMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring20220518_01/WEB-INF/classes/mapper/dataMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring20220518_01/WEB-INF/classes/mapper/dataMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring20220518_01/WEB-INF/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring20220518_01/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +168,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652832438581</updated>
-      <workItem from="1652832440093" duration="14829000" />
+      <workItem from="1652832440093" duration="16599000" />
     </task>
     <task id="LOCAL-00001" summary="insert 성공/실패 여부 처리">
       <created>1652848872416</created>
@@ -193,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652848891055</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="list 출력">
+      <created>1652851809888</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1652851809888</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +210,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="insert 성공/실패 여부 처리" />
-    <option name="LAST_COMMIT_MESSAGE" value="insert 성공/실패 여부 처리" />
+    <MESSAGE value="list 출력" />
+    <option name="LAST_COMMIT_MESSAGE" value="list 출력" />
   </component>
 </project>
