@@ -16,7 +16,7 @@
 <h2>list.jsp</h2>
 <c:forEach var="people" items="${peopleList}">
 <%--    var: 반복변수, items: 반복할 대상--%>
-    ${people.name}<br>
+    ${people.name}
     ${people.age}<br>
 </c:forEach>
 </body>

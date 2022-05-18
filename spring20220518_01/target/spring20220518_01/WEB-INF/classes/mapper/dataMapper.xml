@@ -8,7 +8,7 @@
         insert into people_table(name, age) values (#{name}, #{age})
     </insert>
     <select id="findAll" resultType="people">
-        select * from people_table;
+        select * from people_table
     </select>
 </mapper>
 
