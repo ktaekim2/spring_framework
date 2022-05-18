@@ -10,9 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cf5e889-db5c-405d-be83-e283a52bf043" name="Changes" comment="insert 성공/실패 여부 처리">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/its/people/controller/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/people/controller/PeopleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/people/repository/PeopleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/people/repository/PeopleRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/its/people/service/PeopleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/people/service/PeopleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/dataMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/dataMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/dataMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/dataMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring20220518_01/WEB-INF/classes/mapper/dataMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring20220518_01/WEB-INF/classes/mapper/dataMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring20220518_01/WEB-INF/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring20220518_01/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +31,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -169,7 +177,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652832438581</updated>
-      <workItem from="1652832440093" duration="12560000" />
+      <workItem from="1652832440093" duration="14829000" />
     </task>
     <task id="LOCAL-00001" summary="insert 성공/실패 여부 처리">
       <created>1652848872416</created>

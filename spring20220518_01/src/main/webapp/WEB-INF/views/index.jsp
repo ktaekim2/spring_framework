@@ -13,5 +13,6 @@
 <body>
 <h2>index.jsp</h2>
 <a href="save-form">save-form 주소 요청</a>
+<a href="findAll">리스트페이지출력</a>
 </body>
 </html>

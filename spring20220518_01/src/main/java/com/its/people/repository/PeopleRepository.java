@@ -5,10 +5,13 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class PeopleRepository {
     @Autowired
     private SqlSessionTemplate sql;
+
     public void save(String name, int age) {
         // 넘겨받은 name, age를 peopleDTO 객체에 담자
         PeopleDTO peopleDTO = new PeopleDTO();
@@ -22,7 +25,13 @@ public class PeopleRepository {
     public int save1(PeopleDTO peopleDTO) {
         return sql.insert("People.save", peopleDTO);
     }
+
     public int save2(PeopleDTO peopleDTO) {
         return sql.insert("People.save", peopleDTO);
+    }
+
+    public List<PeopleDTO> findAll() {
+        return sql.selectList("People.findAll");
+        // mybatis가 알아서 list를 만들어 줌
     }
 }
