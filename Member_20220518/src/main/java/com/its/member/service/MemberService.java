@@ -21,14 +21,10 @@ public class MemberService {
         }
     }
 
-    public boolean login(MemberDTO memberDTO) {
+    public MemberDTO login(MemberDTO memberDTO) {
         MemberDTO loginMember = memberRepository.login(memberDTO);
         // select * 은 DTO전체
-        if (loginMember != null) {
-            return true;
-        } else {
-            return false;
-        }
+        return loginMember;
     }
 
     public List<MemberDTO> findAll() {

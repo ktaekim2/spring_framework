@@ -15,5 +15,7 @@
 <a href="save-form">회원가입</a>
 <a href="login-form">로그인</a>
 <a href="findAll">목록출력</a>
+<br>
+로그인 회원 정보: ${loginMember}
 </body>
 </html>

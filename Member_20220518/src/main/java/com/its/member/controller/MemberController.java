@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -39,10 +40,15 @@ public class MemberController {
     }
 
     @PostMapping("/login")
-    public String login(@ModelAttribute MemberDTO memberDTO) {
-        boolean loginResult = memberService.login(memberDTO);
-        if (loginResult) {
+    public String login(@ModelAttribute MemberDTO memberDTO, Model model, HttpSession session) {
+        MemberDTO loginMember = memberService.login(memberDTO);
+        // 세션(session): model과 다르게
+        // 직접 지우거나 브라우저를 끄지 않으면 세션에 담긴 정보는 유지됨
+        if (loginMember != null) {
             System.out.println("로그인성공");
+            model.addAttribute("loginMember", loginMember);
+            session.setAttribute("loginId", loginMember.getMemberId());
+            session.setAttribute("id", loginMember.getId());
             return "main";
         } else {
             System.out.println("로그인실패");

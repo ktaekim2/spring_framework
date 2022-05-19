@@ -9,16 +9,26 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        input {
+            display: block;
+        }
+    </style>
 </head>
 <body>
 <h2>save-form.jsp</h2>
 <form action="save" method="post">
-    아이디: <input type="text" name="memberId">
-    비밀번호: <input type="password" name="memberPassword">
-    이름: <input type="text" name="memberName">
-    나이: <input type="text" name="memberAge">
-    전화번호: <input type="text" name="memberPhone">
+    <input type="text" name="memberId" placeholder="아이디">
+    <input type="password" name="memberPassword" placeholder="비밀번호">
+    <input type="text" name="memberName" placeholder="이름">
+    <input type="text" name="memberAge" placeholder="나이">
+    <input type="text" name="memberPhone" placeholder="전화번호">
     <input type="submit" value="화원가입">
+<%--    /save로 보냄--%>
+    <button>버튼tag가입</button>
+<%--    이걸 사용하면 버튼으로 함수 호출기능 사용 못함--%>
+    <input type="button" value="button타입">
+<%--    이걸 쓰면 submit이 안되면서 버튼을 눌러 특정 함수 호출 가능--%>
 </form>
 </body>
 </html>
