@@ -47,8 +47,8 @@ public class MemberController {
         if (loginMember != null) {
             System.out.println("로그인성공");
             model.addAttribute("loginMember", loginMember);
-            session.setAttribute("loginId", loginMember.getMemberId());
-            session.setAttribute("id", loginMember.getId());
+            session.setAttribute("loginMemberId", loginMember.getMemberId());
+            session.setAttribute("loginId", loginMember.getId());
             return "main";
         } else {
             System.out.println("로그인실패");
