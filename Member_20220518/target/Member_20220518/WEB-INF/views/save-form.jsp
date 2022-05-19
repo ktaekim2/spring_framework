@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <body>
+<h2>save-form.jsp</h2>
 <form action="save" method="post">
     아이디: <input type="text" name="memberId">
     비밀번호: <input type="password" name="memberPassword">

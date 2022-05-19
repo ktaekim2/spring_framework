@@ -5,6 +5,8 @@ import com.its.member.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MemberService {
     @Autowired
@@ -19,11 +21,16 @@ public class MemberService {
     }
 
     public boolean login(MemberDTO memberDTO) {
-        int loginResult = memberRepository.login(memberDTO);
-        if (loginResult > 0) {
+        boolean loginResult = memberRepository.login(memberDTO);
+        if (loginResult) {
             return true;
         } else {
             return false;
         }
+    }
+
+    public List<MemberDTO> findAll() {
+        List<MemberDTO> memberDTOList = memberRepository.findAll();
+        return memberDTOList;
     }
 }

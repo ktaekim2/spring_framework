@@ -13,7 +13,7 @@
 <body>
 <h2>index.jsp</h2>
 <a href="save-form">회원가입</a>
-<a href="login">로그인</a>
+<a href="login-form">로그인</a>
 <a href="findAll">목록출력</a>
 </body>
 </html>

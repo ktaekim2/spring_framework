@@ -4,21 +4,24 @@ import com.its.member.dto.MemberDTO;
 import com.its.member.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class MemberController {
     @Autowired
     private MemberService memberService;
 
-    @GetMapping("save-form")
-    public String save() {
+    @GetMapping("/save-form")
+    public String saveForm() {
         return "save-form";
     }
 
-    @PostMapping("save")
+    @PostMapping("/save")
     public String save(@ModelAttribute MemberDTO memberDTO) {
         boolean saveResult = memberService.save(memberDTO);
         if (saveResult) {
@@ -30,12 +33,12 @@ public class MemberController {
         }
     }
 
-    @GetMapping("login-form")
+    @GetMapping("/login-form")
     public String loginForm() {
         return "login-form";
     }
 
-    @PostMapping("login")
+    @PostMapping("/login")
     public String login(@ModelAttribute MemberDTO memberDTO) {
         boolean loginResult = memberService.login(memberDTO);
         if (loginResult) {
@@ -45,5 +48,12 @@ public class MemberController {
             System.out.println("로그인실패");
             return "login-fail";
         }
+    }
+
+    @GetMapping("/findAll")
+    public String findAll(Model model) {
+        List<MemberDTO> memberDTOList = memberService.findAll();
+        model.addAttribute("memberList", memberDTOList);
+        return "list";
     }
 }
