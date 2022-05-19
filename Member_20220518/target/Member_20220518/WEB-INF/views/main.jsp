@@ -11,6 +11,10 @@
     <title>Title</title>
 </head>
 <body>
-<h2>로그인 성공</h2>
+<h2>main.jsp</h2>
+로그인 회원 정보: ${loginMember}<br>
+세션에 담은 memberId: ${sessionScope.loginMemberId}<br>
+세션에 담은 Id: ${sessionScope.loginId}<br>
+<a href="/">index로 이동</a>
 </body>
 </html>
