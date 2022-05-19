@@ -46,7 +46,7 @@ public class MemberController {
             return "main";
         } else {
             System.out.println("로그인실패");
-            return "login-fail";
+            return "login;
         }
     }
 
