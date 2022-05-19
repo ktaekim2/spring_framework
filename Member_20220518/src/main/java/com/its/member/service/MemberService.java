@@ -22,8 +22,9 @@ public class MemberService {
     }
 
     public boolean login(MemberDTO memberDTO) {
-        boolean loginResult = memberRepository.login(memberDTO);
-        if (loginResult) {
+        MemberDTO loginMember = memberRepository.login(memberDTO);
+        // select * 은 DTO전체
+        if (loginMember != null) {
             return true;
         } else {
             return false;

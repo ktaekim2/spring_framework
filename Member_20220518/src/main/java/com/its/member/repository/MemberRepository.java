@@ -16,11 +16,10 @@ public class MemberRepository {
         return sql.insert("Member.save", memberDTO);
     }
 
-    public boolean login(MemberDTO memberDTO) {
-        boolean selectResult = false;
-        if (sql.selectOne("Member.login", memberDTO) != null) {
-            selectResult = true;
-        } return selectResult;
+    public MemberDTO login(MemberDTO memberDTO) {
+        return sql.selectOne("Member.login", memberDTO);
+        // 한 줄이면 selectOne
+        // 여러 줄이면 selectList
     }
 
     public List<MemberDTO> findAll() {
