@@ -12,10 +12,9 @@
 </head>
 <body>
 <h2>index.jsp</h2>
-<a href="save-form">회원가입</a>
-<a href="login-form">로그인</a>
-<a href="findAll">목록출력</a>
-<br>
+<a href="save-form">회원가입</a><br>
+<a href="login-form">로그인</a><br>
+<a href="findAll">목록출력</a><br>
 로그인 회원 정보: ${loginMember}<br>
 세션에 담은 memberId: ${sessionScope.loginMemberId}<br>
 세션에 담은 Id: ${sessionScope.loginId}<br>

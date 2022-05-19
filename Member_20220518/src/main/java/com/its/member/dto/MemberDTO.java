@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data // getter/setter, toString,
+@Data // getter/setter, toString 등..
 @NoArgsConstructor // 기본생성자 추가, 안해도 기본적으로 있음
 @AllArgsConstructor // 모든 필드를 매개변수로 하는 생성자
 public class MemberDTO {

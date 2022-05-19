@@ -9,13 +9,20 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
 <body>
-<h2>login-form.jsp</h2>
-<form action="/login" method="post">
-    <input type="text" name="memberId" placeholder="아이디">
-    <input type="password" name="memberPassword" placeholder="비밀번호">
-    <input type="submit" value="로그인">
-</form>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <h2>login-form.jsp</h2>
+            <form action="/login" method="post">
+                <input type="text" name="memberId" placeholder="아이디"><br><br>
+                <input type="password" name="memberPassword" placeholder="비밀번호"><br>
+                <input type="submit" value="로그인">
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>
