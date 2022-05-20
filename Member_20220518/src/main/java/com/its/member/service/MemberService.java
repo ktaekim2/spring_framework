@@ -11,6 +11,7 @@ import java.util.List;
 public class MemberService {
     @Autowired
     private MemberRepository memberRepository;
+
     public boolean save(MemberDTO memberDTO) {
         int saveResult = memberRepository.save(memberDTO);
         // insert 결과가 숫자로 넘어오므로
@@ -35,5 +36,14 @@ public class MemberService {
 
     public MemberDTO findById(Long id) {
         return memberRepository.findById(id);
+    }
+
+    public boolean deleteById(Long id) {
+        int deleteResult = memberRepository.deleteById(id);
+        if (deleteResult > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

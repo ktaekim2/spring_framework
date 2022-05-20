@@ -70,4 +70,20 @@ public class MemberController {
         model.addAttribute("member", memberDTO);
         return "detail";
     }
+
+    @GetMapping("/delete")
+    public String deleteById(@RequestParam("id") Long id) {
+        boolean deleteResult = memberService.deleteById(id);
+        if (deleteResult) {
+            // redirect: 컨트롤러의 메서드에서 다른 메서드의 주소를 호출
+            // redirect를 이용하여 findAll 주소 요청
+            // controller내부에서 다른 메소드 실행을 위해 사용
+            return "redirect:/findAll"; // jsp가 오면 안되고 주소값
+        } else {
+            return "delete-fail";
+        }
+    }
+    @GetMapping("/update-form")
+    public String updateForm() {}
+    return "update-form";
 }

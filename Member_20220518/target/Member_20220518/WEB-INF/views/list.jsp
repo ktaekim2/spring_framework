@@ -37,9 +37,10 @@
             <th>${member.memberAge}</th>
             <th>${member.memberPhone}</th>
             <th><a href="/detail?id=${member.id}">조회</th>
-            <th><a href="/detail?id=${member.id}">삭제</th>
+            <th><a href="/delete?id=${member.id}">삭제</th>
 <%--            클릭한 회원의 정보를 DB에서 가져와서 detail.jsp에 출력--%>
 <%--            조회, 수정 삭제는 pk값을 controller에 던져야 함--%>
+<%--            삭제가 완료된 전체 목록--%>
         </tr>
     </c:forEach>
 </table>
