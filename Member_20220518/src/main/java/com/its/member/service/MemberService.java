@@ -15,6 +15,7 @@ public class MemberService {
     public boolean save(MemberDTO memberDTO) {
         int saveResult = memberRepository.save(memberDTO);
         // insert 결과가 숫자로 넘어오므로
+        System.out.println(saveResult);
         if (saveResult > 0) {
             return true;
         } else {

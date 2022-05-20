@@ -120,4 +120,10 @@ public class MemberController {
         MemberDTO memberDTO = memberService.findById(id);
         return memberDTO;
     }
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate(); // 세션을 무효화 시킨다.
+        return "index";
+    }
+
 }

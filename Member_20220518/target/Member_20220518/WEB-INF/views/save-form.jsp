@@ -31,9 +31,9 @@
                 전화번호<input class="form-control mb-2" type="text" name="memberPhone">
                 <input class="btn btn-primary" type="submit" value="화원가입">
                 <%--    /save로 보냄--%>
-                <button class="btn btn-primary">버튼tag가입</button>
+                <button class="btn btn-primary" onclick="location.href='/update-form'">버튼tag가입</button>
                 <%--    이걸 사용하면 버튼으로 함수 호출기능 사용 못함--%>
-                <input class="btn btn-primary" type="button" value="button타입">
+                <input class="btn btn-primary" type="button" value="button타입" onclick="abcd()">
                 <%--    이걸 쓰면 submit이 안되면서 버튼을 눌러 특정 함수 호출 가능--%>
             </form>
         </div>
@@ -41,6 +41,9 @@
 </div>
 </body>
 <script>
+    function abcd() {
+        console.log("함수 호출 성공")
+    }
     const duplicateCheck = () => {
         const memberId = document.getElementById("memberId").value;
         const checkResult = document.getElementById("dup-check-result");
