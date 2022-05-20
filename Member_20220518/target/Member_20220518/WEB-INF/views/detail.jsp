@@ -14,7 +14,8 @@
 <body>
 <div class="container">
     <h2>detail.jsp</h2>
-    조회 결과: ${member}
+    조회 결과: ${member}<br>
+    <a href="/">index로 이동</a><br>
 </div>
 </body>
 </html>
