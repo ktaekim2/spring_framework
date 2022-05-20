@@ -55,4 +55,13 @@ public class MemberService {
             return false;
         }
     }
+
+    public String duplicateCheck(String memberId) {
+        String checkResult = memberRepository.duplicateCheck(memberId);
+        if (checkResult == null) {
+            checkResult = "ok";
+        } else {
+            checkResult = "no";
+        } return checkResult;
+    }
 }

@@ -33,6 +33,11 @@
         set memberPhone=#{memberPhone}
         where id = #{id}
     </update>
+    <select id="duplicateCheck" parameterType="String" resultType="String">
+        select memberId
+        from member_table
+        where memberId = #{memberId}
+    </select>
 </mapper>
 
 

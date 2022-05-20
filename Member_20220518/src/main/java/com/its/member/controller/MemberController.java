@@ -5,10 +5,7 @@ import com.its.member.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -17,12 +14,10 @@ import java.util.List;
 public class MemberController {
     @Autowired
     private MemberService memberService;
-
     @GetMapping("/save-form")
     public String saveForm() {
         return "save-form";
     }
-
     @PostMapping("/save")
     public String save(@ModelAttribute MemberDTO memberDTO) {
         boolean saveResult = memberService.save(memberDTO);
@@ -34,12 +29,10 @@ public class MemberController {
             return "save-fail";
         }
     }
-
     @GetMapping("/login-form")
     public String loginForm() {
         return "login-form";
     }
-
     @PostMapping("/login")
     public String login(@ModelAttribute MemberDTO memberDTO, Model model, HttpSession session) {
         MemberDTO loginMember = memberService.login(memberDTO);
@@ -56,21 +49,18 @@ public class MemberController {
             return "login-form";
         }
     }
-
     @GetMapping("/findAll")
     public String findAll(Model model) {
         List<MemberDTO> memberDTOList = memberService.findAll();
         model.addAttribute("memberList", memberDTOList);
         return "list";
     }
-
     @GetMapping("/detail")
     public String findById(@RequestParam("id") Long id, Model model) {
         MemberDTO memberDTO = memberService.findById(id);
         model.addAttribute("member", memberDTO);
         return "detail";
     }
-
     @GetMapping("/delete")
     public String deleteById(@RequestParam("id") Long id) {
         boolean deleteResult = memberService.deleteById(id);
@@ -83,7 +73,6 @@ public class MemberController {
             return "delete-fail";
         }
     }
-
     @GetMapping("/update-form")
     public String updateForm(HttpSession session, Model model) {
         // 로그인을 한 상태기 때문에 세션에 id, memberId가 들어있고
@@ -95,7 +84,6 @@ public class MemberController {
         model.addAttribute("updateMember", memberDTO);
         return "update";
     }
-
     @PostMapping("/update")
     public String update(@ModelAttribute MemberDTO memberDTO) {
         System.out.println("memberDTO = " + memberDTO);
@@ -106,5 +94,30 @@ public class MemberController {
         } else {
             return "update-fail";
         }
+    }
+    @PostMapping("/duplicate-check")
+    public @ResponseBody String duplicateCheck(@RequestParam("memberId") String memberId) {
+        System.out.println("memberId = " + memberId);
+        // memberId를 DB에서 중복값이 있는지 없는지 체크하고
+        // 없으면 ok, 있으면 no라는 String값을 리턴받으세요.
+        String checkResult = memberService.duplicateCheck(memberId);
+        System.out.println(checkResult);
+        return checkResult; // ok.jsp 또는  no.jsp를 찾음.
+        // @ResponseBody: 순수한 text를 응답해 줄 수 있다.
+    }
+    @GetMapping("/response-test")
+    public @ResponseBody String responseTest() {
+        return "main";
+        // 화면에 찍힐 data(body)를 줌
+    }
+    @GetMapping("/response-test2")
+    public @ResponseBody List<MemberDTO> responseTest2() {
+        return  memberService.findAll();
+    }
+    @GetMapping("/detail-ajax")
+    public @ResponseBody MemberDTO findByIdAjax(@RequestParam("id") Long id) {
+        System.out.println("id = " + id);
+        MemberDTO memberDTO = memberService.findById(id);
+        return memberDTO;
     }
 }
