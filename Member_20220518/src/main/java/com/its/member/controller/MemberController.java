@@ -14,10 +14,12 @@ import java.util.List;
 public class MemberController {
     @Autowired
     private MemberService memberService;
+
     @GetMapping("/save-form")
     public String saveForm() {
         return "save-form";
     }
+
     @PostMapping("/save")
     public String save(@ModelAttribute MemberDTO memberDTO) {
         boolean saveResult = memberService.save(memberDTO);
@@ -29,10 +31,12 @@ public class MemberController {
             return "save-fail";
         }
     }
+
     @GetMapping("/login-form")
     public String loginForm() {
         return "login-form";
     }
+
     @PostMapping("/login")
     public String login(@ModelAttribute MemberDTO memberDTO, Model model, HttpSession session) {
         MemberDTO loginMember = memberService.login(memberDTO);
@@ -49,6 +53,7 @@ public class MemberController {
             return "login-form";
         }
     }
+
     @GetMapping("/findAll")
     public String findAll(Model model) {
         List<MemberDTO> memberDTOList = memberService.findAll();
