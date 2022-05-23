@@ -23,6 +23,8 @@ public class BoardController {
 
     @PostMapping("/save")
     public String save(@ModelAttribute BoardDTO boardDTO) {
+        System.out.println("BoardController.save");
+        System.out.println("boardDTO = " + boardDTO);
         boolean saveResult = boardService.save(boardDTO);
         if (saveResult) {
             System.out.println("글작성성공");
@@ -39,7 +41,8 @@ public class BoardController {
 //        session.setAttribute("boardList", boardDTOList);
         model.addAttribute("boardList", boardDTOList);
         return "boardPages/list";
-        //모델을 쓴 메서드의 리턴페이지까지만 데이터가 넘어감 계속 못씀씀    }
+        //모델을 쓴 메서드의 리턴페이지까지만 데이터가 넘어감 계속 못씀씀
+    }
 
     @GetMapping("/detail")
     public String findById(@RequestParam("id") Long id, Model model) {
@@ -65,21 +68,21 @@ public class BoardController {
 //        }
 //    }
 
-    @GetMapping("/delete")
-    public String delete(Long id, Model model) {
-//        Long updateId = (Long) session.getAttribute("loginId");
-//        MemberDTO memberDTO = memberService.findById(updateId);
-//        model.addAttribute("updateMember", memberDTO);
-        return "delete";
-    }
-
-    @PostMapping("/delete")
-    public String delete(Long id) {
-        boolean deleteResult = boardService.delete(id);
-        if(deleteResult) {
-            return "/boardPages/list";
-        } else {
-            return "update-fail";
-        }
-    }
+//    @GetMapping("/delete")
+//    public String delete(Long id, Model model) {
+////        Long updateId = (Long) session.getAttribute("loginId");
+////        MemberDTO memberDTO = memberService.findById(updateId);
+////        model.addAttribute("updateMember", memberDTO);
+//        return "delete";
+//    }
+//
+//    @PostMapping("/delete")
+//    public String delete(Long id) {
+//        boolean deleteResult = boardService.delete(id);
+//        if (deleteResult) {
+//            return "/boardPages/list";
+//        } else {
+//            return "update-fail";
+//        }
+//    }
 }

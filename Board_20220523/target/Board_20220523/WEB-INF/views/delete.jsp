@@ -30,7 +30,7 @@
         // 사용자가 입력한 비밀번호 값 가져오기
         const boardPassword = document.getElementById("boardPassword").value;
         // DB에서 가져온 비밀번호 가져오기
-        const boardPasswordDB = '${boardList.boardPassword}';
+        const boardPasswordDB = '${boardList.boardPassword}'; // 이건 리스트라 안됨
         console.log("boardPassword: " + boardPassword + ", boardPasswordDB: " + boardPasswordDB);
         // 비밀번호 일치하면 form태그에 입력한 내용을 컨트롤러로 요청
         // 일치하지 않으면 alert으로 비밀번호 틀린다고 보여줌

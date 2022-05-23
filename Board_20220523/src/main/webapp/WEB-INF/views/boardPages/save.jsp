@@ -25,7 +25,7 @@
             <h2 class="display-4 fw-normal">save.jsp</h2>
             <form action="/board/save" method="post">
                 작성자<input class="form-control mb-2" type="text" id="boardWriter" name="boardWriter">
-                비밀번호<input class="form-control mb-2" type="text" id="boardPassword" name="boardPassword">
+                비밀번호<input class="form-control mb-2" type="password" id="boardPassword" name="boardPassword">
                 제목<input class="form-control mb-2" type="text" id="boardTitle" name="boardTitle">
                 내용<textarea class="form-control" name="boardContents" id="boardContents" cols="30" rows="10"></textarea>
                 <input class="btn btn-primary" type="submit" value="글쓰기">

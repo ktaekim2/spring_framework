@@ -5,8 +5,8 @@
 
 <mapper namespace="Board">
     <insert id="save" parameterType="board">
-        insert into board_table(boardTitle, boardWriter, boardPassword, boardContents, boardCreatedDate)
-        values (#{boardTitle}, #{boardWriter}, #{boardPassword}, #{boardContents}, #{now()})
+        insert into board_table(boardTitle, boardWriter, boardPassword, boardContents)
+        values (#{boardTitle}, #{boardWriter}, #{boardPassword}, #{boardContents})
     </insert>
     <select id="findAll" resultType="board">
         select *
@@ -17,11 +17,11 @@
         from board_table
         where id = #{id}
     </select>
-    <delete id="delete" parameterType="Long">
-        delete
-        from board_table
-        where id = #{id}
-    </delete>
+<!--    <delete id="delete" parameterType="Long">-->
+<!--        delete-->
+<!--        from board_table-->
+<!--        where id = #{id}-->
+<!--    </delete>-->
 <!--        <select id="passwordCheck" parameterType="String" resultType="member">-->
 <!--            select *-->
 <!--            from member_table-->

@@ -23,9 +23,9 @@ public class BoardRepository {
         return sql.selectOne("Board.findById", id);
     }
 
-    public int delete(Long id) {
-        return sql.delete("Board.delete", id);
-    }
+//    public int delete(Long id) {
+//        return sql.delete("Board.delete", id);
+//    }
 
 //    public boolean passwordCheck(String boardPassword) {
 //        return sql.selectOne("Board.passwordCheck", boardPassword);

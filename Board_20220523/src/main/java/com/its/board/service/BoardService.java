@@ -29,14 +29,14 @@ public class BoardService {
         return boardRepository.findById(id);
     }
 
-    public boolean delete(Long id) {
-        int deleteResult = boardRepository.delete(id);
-        if (deleteResult > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+//    public boolean delete(Long id) {
+//        int deleteResult = boardRepository.delete(id);
+//        if (deleteResult > 0) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
 
 //    public boolean passwordCheck(String boardPassword) {
 //        return boardRepository.passwordCheck(boardPassword);
