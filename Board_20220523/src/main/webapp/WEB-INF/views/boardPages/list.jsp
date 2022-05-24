@@ -27,7 +27,6 @@
             <th>boardWriter</th>
             <th>boardHits</th>
             <th>boardCreatedDate</th>
-            <th>boardCreatedDate(fmt적용)</th>
         </tr>
         <c:forEach var="board" items="${boardList}">
             <tr>
@@ -35,8 +34,7 @@
                 <td><a href="/board/detail?id=${board.id}">${board.boardTitle}</a></td>
                 <td>${board.boardWriter}</td>
                 <td>${board.boardHits}</td>
-                <td>${board.boardCreatedDate}</td>
-                <td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss" value="${board.boardCreatedDate}"></fmt:formatDate> </td>
+                <td><fmt:formatDate pattern="MM-dd hh:mm" value="${board.boardCreatedDate}"></fmt:formatDate> </td>
             </tr>
         </c:forEach>
     </table>

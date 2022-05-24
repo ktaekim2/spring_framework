@@ -16,12 +16,24 @@
     <div class="row justify-content-md-center">
         <div class="col-md-auto">
             <h2>passwordCheck.jsp</h2>
-            <form action="/passwordCheck" method="post">
-                <input type="password" name="boardPassword" placeholder="비밀번호"><br>
-                <input type="submit" value="확인">
-            </form>
+            <input type="text" id="inputPassword" name="inputPassword" placeholder="비밀번호"><br>
+            <input class="btn btn-primary" type="button" onclick="passwordCheck()" value="비밀번호확인">
         </div>
     </div>
 </div>
 </body>
+<script>
+    const passwordCheck = () => {
+        console.log("passwordCheck 함수호출")
+        const inputPassword = document.getElementById("inputPassword").value;
+        const boardPasswordDB = '${board.boardPassword}';
+        console.log("inputPassword: " + inputPassword + ", boardPasswordDB: " + boardPasswordDB);
+        if (inputPassword == boardPasswordDB) {
+            location.href = "/board/delete?id=${board.id}"
+        } else {
+            alert("비밀번호 불일치")
+            location.href = "/board/detail?id=${board.id}"
+        }
+    }
+</script>
 </html>

@@ -26,7 +26,18 @@ public class BoardService {
     }
 
     public BoardDTO findById(Long id) {
+        // 1.조회수 증가, 2.상세정보 가져오기
+        boardRepository.updateHits(id);
         return boardRepository.findById(id);
+    }
+
+    public boolean deleteById(Long id) {
+        int deleteResult = boardRepository.deleteById(id);
+        if (deleteResult > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 //    public boolean delete(Long id) {

@@ -33,13 +33,24 @@
         </tr>
     <tr>
         <td>
-            <button class="btn btn-primary" onclick="location.href='/board/delete?id=${board.id}'">글삭제</button>
-            <button class="btn btn-primary" onclick="location.href='/update?id=${board.id}'">글수정</button>
+            <button class="btn btn-primary" onclick="boardDelete()">글삭제</button>
+            <button class="btn btn-primary" onclick="boardUpdate()">글수정</button>
         </td>
     </tr>
     </table>
 </div>
 </body>
+<script>
+    const boardDelete = () => {
+        // 비밀번호 체크를 위한 화면(passwordCheck.jsp)을 출력하고, 비밀번호 입력받아서
+        // 비밀번호 일치하면 삭제처리 후 목록 출력, 일치하지 않으면 alert 띄우고 상세화면으로
+        location.href='/board/passwordCheck?id=${board.id}'
+    }
+    const boardUpdate = () => {
+        // 수정을 위한 화면(update.jsp)을 출력하고, 비밀번호를 입력받아서
+        // 비밀번호 일치하면 수정처리, 일치하지 않으면 alert(회원 수정이랑 프로세스 같음)
+    }
+</script>
 <%--<script>--%>
 <%--    const detailByAjax = (id) => { // js자체가 타입 안쓰므로--%>
 <%--        console.log(id);--%>

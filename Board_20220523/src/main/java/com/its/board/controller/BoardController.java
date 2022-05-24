@@ -48,41 +48,26 @@ public class BoardController {
     public String findById(@RequestParam("id") Long id, Model model) {
         BoardDTO boardDTO = boardService.findById(id);
         model.addAttribute("board", boardDTO);
-        return "/detail";
+        return "boardPages/detail";
     }
 
-//    @GetMapping("/passwordCheck")
-//    public String passwordCheck() {
-//        return "passwordCheck";
-//    }
-//
-//    @PostMapping("/passwordCheck")
-//    public String passwordCheck(String boardPassword) {
-//        boolean checkResult = boardService.passwordCheck(boardPassword);
-//        if (checkResult) {
-//            System.out.println("비밀번호 일치");
-//            return "main";
-//        } else {
-//            System.out.println("비밀번호가 불일치");
-//            return "login-form";
-//        }
-//    }
+    @GetMapping("/passwordCheck")
+    public String passwordCheck(@RequestParam("id") Long id, Model model) {
+        BoardDTO boardDTO = boardService.findById(id);
+        model.addAttribute("board", boardDTO);
+        return "passwordCheck";
+    }
 
-//    @GetMapping("/delete")
-//    public String delete(Long id, Model model) {
-////        Long updateId = (Long) session.getAttribute("loginId");
-////        MemberDTO memberDTO = memberService.findById(updateId);
-////        model.addAttribute("updateMember", memberDTO);
-//        return "delete";
-//    }
-//
-//    @PostMapping("/delete")
-//    public String delete(Long id) {
-//        boolean deleteResult = boardService.delete(id);
-//        if (deleteResult) {
-//            return "/boardPages/list";
-//        } else {
-//            return "update-fail";
-//        }
-//    }
+    @GetMapping("/delete")
+    public String delete(@RequestParam("id") Long id, Model model) {
+        System.out.println("BoardController.delete");
+        boolean deleteResult = boardService.deleteById(id);
+        if (deleteResult) {
+            System.out.println("삭제성공");
+            return "redirect:/board/findAll"; // 주소
+        } else {
+            System.out.println("삭제실패");
+            return "/boardPages/detail"; // jsp
+        }
+    }
 }
