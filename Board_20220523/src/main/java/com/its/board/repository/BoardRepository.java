@@ -31,11 +31,11 @@ public class BoardRepository {
         return sql.delete("Board.deleteById", id);
     }
 
-//    public int delete(Long id) {
-//        return sql.delete("Board.delete", id);
-//    }
+    public int update(BoardDTO boardDTO) {
+        return sql.update("Board.update", boardDTO);
+    }
 
-//    public boolean passwordCheck(String boardPassword) {
-//        return sql.selectOne("Board.passwordCheck", boardPassword);
-//    }
+    public void saveFile(BoardDTO boardDTO) {
+        sql.insert("Board.saveFile", boardDTO);
+    }
 }

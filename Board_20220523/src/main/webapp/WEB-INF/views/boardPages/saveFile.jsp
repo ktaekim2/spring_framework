@@ -23,11 +23,14 @@
     <div class="row justify-content-md-center">
         <div class="col-md-auto">
             <h2 class="display-4 fw-normal">save.jsp</h2>
-            <form action="/board/save" method="post">
+            <form action="/board/saveFile" method="post" enctype="multipart/form-data">
+                <%--                enctype: 파일 보낸다는 의미--%>
                 작성자<input class="form-control mb-2" type="text" id="boardWriter" name="boardWriter">
                 비밀번호<input class="form-control mb-2" type="password" id="boardPassword" name="boardPassword">
                 제목<input class="form-control mb-2" type="text" id="boardTitle" name="boardTitle">
                 내용<textarea class="form-control" name="boardContents" id="boardContents" cols="30" rows="10"></textarea><br>
+                첨부파일<input type="file" name="boardFile"><br>
+<%--                    db에는 파일의 name이 저장되는 것. 파일 자체가 db에 가는것 아님.--%>
                 <input class="btn btn-primary" type="submit" value="글쓰기">
             </form>
         </div>
@@ -35,33 +38,5 @@
 </div>
 <jsp:include page="../layout/footer.jsp" flush="false"></jsp:include>
 </body>
-<%--<script>--%>
-<%--    function abcd() {--%>
-<%--        console.log("함수 호출 성공")--%>
-<%--    }--%>
-<%--    const duplicateCheck = () => {--%>
-<%--        const memberId = document.getElementById("memberId").value;--%>
-<%--        const checkResult = document.getElementById("dup-check-result");--%>
-<%--        $.ajax({--%>
-<%--            type: "post", // http request method--%>
-<%--            url: "duplicate-check", // 요청주소(컨트롤러 주소값)--%>
-<%--            data: {"memberId": memberId}, // 전송하는 파라미터--%>
-<%--            dataType: "text", // 리턴받을 데이터 형식--%>
-<%--            success: function (result) {--%>
-<%--                if (result == "ok") {--%>
-<%--                    // 사용가능한 아이디--%>
-<%--                    checkResult.innerHTML = "사용가능한 아이디"--%>
-<%--                    checkResult.style.color = "green"--%>
-<%--                } else {--%>
-<%--                    // 이미 사용중인 아이디--%>
-<%--                    checkResult.innerHTML = "이미 사용중인 아이디"--%>
-<%--                    checkResult.style.color = "red"--%>
-<%--                }--%>
-<%--            },--%>
-<%--            error: function () {--%>
-<%--            }--%>
-<%--        });--%>
-<%--    }--%>
-<%--</script>--%>
 </html>
 

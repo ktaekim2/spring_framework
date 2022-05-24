@@ -20,25 +20,43 @@
 <jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
 <div class="container">
     <h2>list.jsp</h2>
-    <table class="table">
+    <table class="table table-hover">
         <tr>
-            <th>id</th>
-            <th>boardTitle</th>
-            <th>boardWriter</th>
-            <th>boardHits</th>
-            <th>boardCreatedDate</th>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성시간</th>
+            <th>조회수</th>
         </tr>
         <c:forEach var="board" items="${boardList}">
             <tr>
                 <td>${board.id}</td>
                 <td><a href="/board/detail?id=${board.id}">${board.boardTitle}</a></td>
                 <td>${board.boardWriter}</td>
-                <td>${board.boardHits}</td>
                 <td><fmt:formatDate pattern="MM-dd hh:mm" value="${board.boardCreatedDate}"></fmt:formatDate> </td>
+                <td>${board.boardHits}</td>
             </tr>
         </c:forEach>
     </table>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </div>
+<jsp:include page="../layout/footer.jsp" flush="false"></jsp:include>
 </body>
 <%--<script>--%>
 <%--    const detailByAjax = (id) => { // js자체가 타입 안쓰므로--%>

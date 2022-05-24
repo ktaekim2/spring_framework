@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -31,7 +32,7 @@ public class BoardController {
             return "redirect:/board/findAll"; // 주소
         } else {
             System.out.println("글작성실패");
-            return "/boardPages/save-fail"; // jsp
+            return "/index"; // jsp
         }
     }
 
@@ -55,7 +56,8 @@ public class BoardController {
     public String passwordCheck(@RequestParam("id") Long id, Model model) {
         BoardDTO boardDTO = boardService.findById(id);
         model.addAttribute("board", boardDTO);
-        return "passwordCheck";
+        // 이전에 담은 board는 model이였어서 사라짐. 다시 담아야 함. return페이지 까지만 효력 있음.
+        return "boardPages/passwordCheck";
     }
 
     @GetMapping("/delete")
@@ -67,7 +69,38 @@ public class BoardController {
             return "redirect:/board/findAll"; // 주소
         } else {
             System.out.println("삭제실패");
-            return "/boardPages/detail"; // jsp
+            return "/boardPages/?id=${board.id}"; // jsp
         }
+    }
+
+    @GetMapping("/update")
+    public String update(@RequestParam("id") Long id, Model model) {
+        BoardDTO boardDTO = boardService.findById(id);
+        model.addAttribute("board", boardDTO);
+        return "/boardPages/update";
+    }
+
+    @PostMapping("/update")
+    public String update (@ModelAttribute BoardDTO boardDTO) {
+        boolean updateResult = boardService.update(boardDTO);
+        if (updateResult) {
+            System.out.println("글수정성공");
+            return "redirect:/board/detail?id=" + boardDTO.getId(); // 주소
+        } else {
+            System.out.println("글작성실패");
+            return "/index"; // jsp
+        }
+    }
+
+    @GetMapping("/saveFile")
+    public String saveFileForm() {
+    return "boardPages/saveFile";
+    }
+
+    // 파일첨부 글작성 처리
+    @PostMapping("/saveFile")
+    public String saveFile(@ModelAttribute BoardDTO boardDTO) throws IOException { // 아몰랑 니가 알아서해
+        boardService.saveFile(boardDTO);
+        return "redirect:/board/findAll";
     }
 }

@@ -15,6 +15,10 @@
             location.href = "/board/save";
         }
 
+        function saveFileForm() {
+            location.href = "/board/saveFile";
+        }
+
         function findAll() {
             location.href = "/board/findAll";
         }
@@ -25,6 +29,7 @@
 <body>
 <h2>index.jsp</h2>
 <button onclick="saveForm()">글작성</button>
+<button onclick="saveFileForm()">글작성(파일)</button>
 <button onclick="findAll()">글목록</button>
 </body>
 </html>
