@@ -1,8 +1,10 @@
 package com.its.board.controller;
 
 import com.its.board.dto.BoardDTO;
+import com.its.board.dto.CommentDTO;
 import com.its.board.dto.PageDTO;
 import com.its.board.service.BoardService;
+import com.its.board.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,9 @@ import java.util.List;
 public class BoardController {
     @Autowired
     private BoardService boardService;
+
+    @Autowired
+    private CommentService commentService;
 
     @GetMapping("/save")
     public String saveForm() {
@@ -52,6 +57,9 @@ public class BoardController {
         BoardDTO boardDTO = boardService.findById(id);
         model.addAttribute("board", boardDTO);
         model.addAttribute("page", page);
+        // 댓글 목록도 가져가야 함.
+        List<CommentDTO> commentDTOList = commentService.findAll(id);
+        model.addAttribute("commentList", commentDTOList);
         return "boardPages/detail";
     }
 
@@ -120,5 +128,12 @@ public class BoardController {
         return "boardPages/pagingList";
     }
 
-    //
+    // 검색처리
+    @GetMapping("/search")
+    public String search(@RequestParam("searchType") String searchType,
+                         @RequestParam("q") String q, Model model) {
+        List<BoardDTO> searchList = boardService.search(searchType, q);
+        model.addAttribute("boardList", searchList);
+        return "boardPages/list";
+    }
 }
