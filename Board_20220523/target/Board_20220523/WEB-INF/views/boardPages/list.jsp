@@ -14,7 +14,6 @@
     <title>Title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="/resources/js/jquery.js"></script>
 </head>
 <body>
 <jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
@@ -33,63 +32,13 @@
                 <td>${board.id}</td>
                 <td><a href="/board/detail?id=${board.id}">${board.boardTitle}</a></td>
                 <td>${board.boardWriter}</td>
-                <td><fmt:formatDate pattern="MM-dd hh:mm" value="${board.boardCreatedDate}"></fmt:formatDate> </td>
+                <td><fmt:formatDate pattern="MM-dd hh:mm" value="${board.boardCreatedDate}"></fmt:formatDate></td>
                 <td>${board.boardHits}</td>
             </tr>
         </c:forEach>
     </table>
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
 </div>
 <jsp:include page="../layout/footer.jsp" flush="false"></jsp:include>
 </body>
-<%--<script>--%>
-<%--    const detailByAjax = (id) => { // js자체가 타입 안쓰므로--%>
-<%--        console.log(id);--%>
-<%--        const detail = document.getElementById("detail");--%>
-<%--        $.ajax({--%>
-<%--            type: "get", // http request method--%>
-<%--            url: "detail-ajax", // 요청주소(컨트롤러 주소값)--%>
-<%--            data: {"id": id}, // 전송하는 파라미터--%>
-<%--            dataType: "json", // 화면 뿌릴 때 거의 json타입으로 지정--%>
-<%--            success: function (result) {--%>
-<%--                let output = "<table class='table'>";--%>
-<%--                output += "<tr>" +--%>
-<%--                    "<th>id</th> <th>memberId</th> <th>memberPassword</th> <th>memberName</th>" +--%>
-<%--                    "<th>memberAge</th> <th>memberPhone</th> " +--%>
-<%--                    "</tr>";--%>
-<%--                output += "<tr>";--%>
-<%--                output += "<td>" + result.id + "</td>";--%>
-<%--                output += "<td>" + result.memberId + "</td>";--%>
-<%--                output += "<td>" + result.memberPassword + "</td>";--%>
-<%--                output += "<td>" + result.memberName + "</td>";--%>
-<%--                output += "<td>" + result.memberAge + "</td>";--%>
-<%--                output += "<td>" + result.memberPhone + "</td>";--%>
-<%--                output += "</tr>";--%>
-<%--                output += "</table>";--%>
-
-<%--                detail.innerHTML = output;--%>
-<%--            },--%>
-<%--            error: function () {--%>
-<%--                alert("오타체크");--%>
-<%--            }--%>
-<%--        });--%>
-<%--    }--%>
-<%--</script>--%>
 </html>
 

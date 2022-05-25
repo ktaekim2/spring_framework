@@ -37,6 +37,7 @@
     </table>
     <button class="btn btn-primary" onclick="boardDelete()">글삭제</button>
     <button class="btn btn-primary" onclick="boardUpdate()">글수정</button>
+    <button class="btn btn-primary" onclick="paging()">페이징목록</button>
 </div>
 <jsp:include page="../layout/footer.jsp" flush="false"></jsp:include>
 </body>
@@ -51,38 +52,8 @@
         // 비밀번호 일치하면 수정처리, 일치하지 않으면 alert(회원 수정이랑 프로세스 같음)
         location.href = '/board/update?id=${board.id}'
     }
+    const paging = () => {
+        location.href = '/board/paging?page=${page}'; // 직전에 있었던 페이지 값을 컨트롤러로 요청
+    }
 </script>
-<%--<script>--%>
-<%--    const detailByAjax = (id) => { // js자체가 타입 안쓰므로--%>
-<%--        console.log(id);--%>
-<%--        const detail = document.getElementById("detail");--%>
-<%--        $.ajax({--%>
-<%--            type: "get", // http request method--%>
-<%--            url: "detail-ajax", // 요청주소(컨트롤러 주소값)--%>
-<%--            data: {"id": id}, // 전송하는 파라미터--%>
-<%--            dataType: "json", // 화면 뿌릴 때 거의 json타입으로 지정--%>
-<%--            success: function (result) {--%>
-<%--                let output = "<table class='table'>";--%>
-<%--                output += "<tr>" +--%>
-<%--                    "<th>id</th> <th>memberId</th> <th>memberPassword</th> <th>memberName</th>" +--%>
-<%--                    "<th>memberAge</th> <th>memberPhone</th> " +--%>
-<%--                    "</tr>";--%>
-<%--                output += "<tr>";--%>
-<%--                output += "<td>" + result.id + "</td>";--%>
-<%--                output += "<td>" + result.memberId + "</td>";--%>
-<%--                output += "<td>" + result.memberPassword + "</td>";--%>
-<%--                output += "<td>" + result.memberName + "</td>";--%>
-<%--                output += "<td>" + result.memberAge + "</td>";--%>
-<%--                output += "<td>" + result.memberPhone + "</td>";--%>
-<%--                output += "</tr>";--%>
-<%--                output += "</table>";--%>
-
-<%--                detail.innerHTML = output;--%>
-<%--            },--%>
-<%--            error: function () {--%>
-<%--                alert("오타체크");--%>
-<%--            }--%>
-<%--        });--%>
-<%--    }--%>
-<%--</script>--%>
 </html>

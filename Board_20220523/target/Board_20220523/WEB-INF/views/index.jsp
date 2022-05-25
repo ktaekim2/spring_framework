@@ -22,8 +22,10 @@
         function findAll() {
             location.href = "/board/findAll";
         }
-        // 회원가입: /member-save => /member/save
-        // 글쓰기: /board-save => /board/save
+
+        const paging = () => {
+            location.href = "/board/paging";
+        }
     </script>
 </head>
 <body>
@@ -31,5 +33,6 @@
 <button onclick="saveForm()">글작성</button>
 <button onclick="saveFileForm()">글작성(파일)</button>
 <button onclick="findAll()">글목록</button>
+<button class="btn btn-outline-success" onclick="paging()">페이징목록</button>
 </body>
 </html>
