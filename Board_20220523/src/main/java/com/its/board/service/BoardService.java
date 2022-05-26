@@ -55,7 +55,7 @@ public class BoardService {
         }
     }
 
-    public void saveFile(BoardDTO boardDTO) throws IOException { // 아몰랑 니가 알아서해
+    public void saveFile(BoardDTO boardDTO) throws IOException { // throws IOException: 아몰랑 니가 알아서해
         /**
          * 1. DTO 객체에 담긴 파일을 꺼냄.
          * 2. 파일의 이름을 가져옴.
@@ -67,6 +67,7 @@ public class BoardService {
          */
         MultipartFile boardFile = boardDTO.getBoardFile(); // 1.
         String boardFileName = boardFile.getOriginalFilename(); // 2.
+//        String boardFileName = boardDTO.getBoardFile().getOriginalFilename(); // 1. ~ 2.
         boardFileName = System.currentTimeMillis() + "-" + boardFileName; // 2.1.
         boardDTO.setBoardFileName(boardFileName); // 3.
         String savePath = "D:\\spring_img\\" + boardFileName; // 4.
@@ -103,6 +104,7 @@ public class BoardService {
         int startPage = (((int)(Math.ceil((double)page / BLOCK_LIMIT))) - 1) * BLOCK_LIMIT + 1;
         // 끝 페이지 3 6 9 12
         int endPage = startPage + BLOCK_LIMIT - 1;
+        // 끝 페이지가 3의 배수가 아닌 경우
         if(endPage > maxPage) // if문 실행 블록이 한 줄이면 중괄호 생략 가능
             endPage = maxPage;
         PageDTO paging = new PageDTO();

@@ -83,6 +83,7 @@ public class MemberController {
         // 로그인을 한 상태기 때문에 세션에 id, memberId가 들어있고
         // 여기서 세션에 있는 id를 가져온다.
         Long updateId = (Long) session.getAttribute("loginId");
+        // getAttribute의 리턴타입이 object이므로 Long으로 강제형변환
         System.out.println("updateId = " + updateId); // soutv
         // DB에서 해당 회원의 정보를 가져와서 그 정보를 가지고 update.jsp로 이동
         MemberDTO memberDTO = memberService.findById(updateId);
@@ -107,8 +108,9 @@ public class MemberController {
         // 없으면 ok, 있으면 no라는 String값을 리턴받으세요.
         String checkResult = memberService.duplicateCheck(memberId);
         System.out.println(checkResult);
-        return checkResult; // ok.jsp 또는  no.jsp를 찾음.
-        // @ResponseBody: 순수한 text를 응답해 줄 수 있다.
+        return checkResult; // @ResponseBody 없으면 ok.jsp 또는 no.jsp를 찾음.
+        // @ResponseBody: 순수한 text(ok 또는 no)를 응답해 줄 수 있다.
+        // 응답만 실어서 보낼 수 있는 방법
     }
     @GetMapping("/response-test")
     public @ResponseBody String responseTest() {

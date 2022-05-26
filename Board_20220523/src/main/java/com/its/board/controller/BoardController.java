@@ -25,7 +25,7 @@ public class BoardController {
 
     @GetMapping("/save")
     public String saveForm() {
-        return "boardPages/save"; // board폴더 안의 save.jsp
+        return "boardPages/save"; // boardPages폴더 안의 save.jsp
     }
 
     @PostMapping("/save")
@@ -48,7 +48,7 @@ public class BoardController {
 //        session.setAttribute("boardList", boardDTOList);
         model.addAttribute("boardList", boardDTOList);
         return "boardPages/list";
-        //모델을 쓴 메서드의 리턴페이지까지만 데이터가 넘어감 계속 못씀씀
+        //모델을 쓴 메서드의 리턴페이지까지만 데이터가 넘어감 계속 못씀
     }
 
     @GetMapping("/detail")
@@ -56,10 +56,12 @@ public class BoardController {
                            @RequestParam(value = "page", required = false, defaultValue = "1") int page) {
         BoardDTO boardDTO = boardService.findById(id);
         model.addAttribute("board", boardDTO);
+//        model.addAttribute("board", boardService.findById(id));
         model.addAttribute("page", page);
         // 댓글 목록도 가져가야 함.
         List<CommentDTO> commentDTOList = commentService.findAll(id);
         model.addAttribute("commentList", commentDTOList);
+//        model.addAttribute("commentList", commentService.findAll(id));
         return "boardPages/detail";
     }
 
@@ -84,6 +86,7 @@ public class BoardController {
         }
     }
 
+    // 수정 화면 요청
     @GetMapping("/update")
     public String update(@RequestParam("id") Long id, Model model) {
         BoardDTO boardDTO = boardService.findById(id);
@@ -91,6 +94,7 @@ public class BoardController {
         return "/boardPages/update";
     }
 
+    // 수정 처리
     @PostMapping("/update")
     public String update(@ModelAttribute BoardDTO boardDTO) {
         boolean updateResult = boardService.update(boardDTO);
@@ -121,8 +125,9 @@ public class BoardController {
     // required=false로 하면 /board/paging 요청도 가능
     // 별도의 페이지 값을 요청하지 않으면 첫페이지(page=1)를 보여주자.
     public String paging(@RequestParam(value = "page", required = false, defaultValue = "1") int page, Model model) {
-        List<BoardDTO> boardList = boardService.pagingList(page);
-        PageDTO paging = boardService.paging(page);
+//        required = true(default)
+        List<BoardDTO> boardList = boardService.pagingList(page); // 페이지의 글 리스트
+        PageDTO paging = boardService.paging(page); // 하단부 페이지 번호
         model.addAttribute("boardList", boardList);
         model.addAttribute("paging", paging);
         return "boardPages/pagingList";
