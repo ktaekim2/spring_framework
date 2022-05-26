@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @Controller
@@ -35,5 +36,19 @@ public class MemberController {
         String checkResult = memberService.duplicateCheck(memberId);
         System.out.println("checkResult = " + checkResult);
         return checkResult;
+    }
+
+    @GetMapping("/login")
+    public String loginForm() {
+        return "/memberPages/login";
+    }
+
+    @PostMapping("/login")
+    public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session) {
+        MemberDTO loginMember = memberService.login(memberDTO);
+        if (loginMember != null)
+        return "/boardPages/list";
+        else
+            return "/memberPages/login";
     }
 }

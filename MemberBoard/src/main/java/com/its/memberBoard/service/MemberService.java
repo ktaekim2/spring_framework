@@ -43,4 +43,11 @@ public class MemberService {
         else
             return "no";
     }
+
+    public MemberDTO login(MemberDTO memberDTO) {
+        System.out.println("MemberService.login");
+        System.out.println("memberDTO = " + memberDTO);
+
+        return memberRepository.login(memberDTO);
+    }
 }
