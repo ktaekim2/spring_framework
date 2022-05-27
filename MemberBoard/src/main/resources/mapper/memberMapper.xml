@@ -26,6 +26,12 @@
         select *
         from mb_member_table;
     </select>
+
+    <delete id="delete" parameterType="Long">
+        delete
+        from mb_member_table
+        where id = #{id}
+    </delete>
 </mapper>
 
 
