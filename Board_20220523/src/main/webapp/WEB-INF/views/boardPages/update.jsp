@@ -45,7 +45,7 @@
         const pwDB = '${board.boardPassword}';
         console.log("boardPassword: " + boardPassword + ", pwDB: " + pwDB);
         if (boardPassword == pwDB) {
-            updateForm.submit();
+            updateForm.submit(); // 노란줄 있지만 잘됨
         } else {
             alert("비밀번호가 틀립니다.")
             location.href = "/board/detail?id=${board.id}";

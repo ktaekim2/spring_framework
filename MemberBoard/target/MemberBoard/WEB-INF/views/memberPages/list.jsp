@@ -23,8 +23,8 @@
             <th>아이디</th>
             <th>비밀번호</th>
             <th>프로필사진</th>
-            <th>조회</th>
-            <th>삭제</th>
+            <th>상세조회</th>
+            <th>회원삭제</th>
         </tr>
         <c:forEach var="member" items="${memberList}">
             <tr>
@@ -33,8 +33,8 @@
                 <td>${member.memberPassword}</td>
                 <td><img src="${pageContext.request.contextPath}/upload/${member.memberProfile}"
                          alt="${member.memberProfile}" height="100" width="100"></td>
-                <td><a href="/member/detail?id=${member.id}">조회</a></td>
-                <td><a href="/member/delete?id=${member.id}">삭제</a></td>
+                <td><a href="/member/detail?id=${member.id}">상세조회</a></td>
+                <td><a href="/member/delete?id=${member.id}">회원삭제</a></td>
             </tr>
         </c:forEach>
     </table>

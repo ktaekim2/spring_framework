@@ -15,5 +15,6 @@ public class BoardRepository {
 
     public List<BoardDTO> pagingList(Map<String, Integer> pagingParam) {
         return sql.selectList("Board.pagingList", pagingParam);
+        // mapper에서 넘어온 DTO 객체를 selectList가 ArrayList로 만들어서 리턴함.
     }
 }

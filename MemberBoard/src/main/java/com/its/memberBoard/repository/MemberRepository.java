@@ -20,7 +20,7 @@ public class MemberRepository {
     }
 
     public String duplicateCheck(String memberId) {
-    return sql.selectOne("Member.duplicateCheck", memberId);
+        return sql.selectOne("Member.duplicateCheck", memberId);
     }
 
     public MemberDTO login(MemberDTO memberDTO) {
@@ -40,4 +40,8 @@ public class MemberRepository {
     }
 
 
+    public void update(MemberDTO memberDTO) {
+        System.out.println("MemberRepository.update");
+        sql.update("Member.update", memberDTO);
+    }
 }

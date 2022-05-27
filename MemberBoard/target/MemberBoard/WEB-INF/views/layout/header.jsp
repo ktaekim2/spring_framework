@@ -79,7 +79,7 @@
                 <c:otherwise>
                     <li class="nav-item"><a href="/member/logout" class="nav-link">로그아웃</a></li>
                     <li class="nav-item"><a class="nav-link">${sessionScope.loginMemberId}님 안녕하세요.</a></li>
-                    <li class="nav-item"><a href="/member/admin" class="nav-link">마이페이지</a></li>
+                    <li class="nav-item"><a href="/member/main" class="nav-link">마이페이지</a></li>
                 </c:otherwise>
             </c:choose>
         </ul>
