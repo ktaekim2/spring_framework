@@ -46,9 +46,22 @@ public class MemberController {
     @PostMapping("/login")
     public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session) {
         MemberDTO loginMember = memberService.login(memberDTO);
-        if (loginMember != null)
-        return "/boardPages/list";
-        else
+        System.out.println("loginMember = " + loginMember);
+        if (loginMember != null) {
+            System.out.println("로그인 성공");
+            session.setAttribute("loginMemberId", loginMember.getMemberId());
+            session.setAttribute("loginId", loginMember.getId());
+            return "/boardPages/list";
+        } else {
+            System.out.println("로그인 실패");
             return "/memberPages/login";
+        }
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        System.out.println("로그아웃 성공");
+        return "index";
     }
 }

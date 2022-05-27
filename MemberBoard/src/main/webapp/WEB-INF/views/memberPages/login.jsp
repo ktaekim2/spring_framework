@@ -18,8 +18,8 @@
 <body>
 <h2>login.jsp</h2>
 <form action="/member/login" method="post">
-    아이디<input type="text" name="loginId">
-    비밀번호<input type="password" name="loginPassword">
+    아이디<input type="text" name="memberId">
+    비밀번호<input type="password" name="memberPassword">
     로그인<input type="submit">
 </form>
 </body>

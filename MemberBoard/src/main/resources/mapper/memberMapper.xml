@@ -18,7 +18,7 @@
     <select id="login" parameterType="member" resultType="member">
         select *
         from mb_member_table
-        where memberId = #{memberId}, memberPassword = #{memberPassword}
+        where memberId = #{memberId} and memberPassword = #{memberPassword}
     </select>
 </mapper>
 
