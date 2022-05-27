@@ -27,6 +27,12 @@
         from mb_member_table;
     </select>
 
+    <select id="findById" parameterType="Long" resultType="member">
+        select *
+        from mb_member_table
+        where id = #{id}
+    </select>
+
     <delete id="delete" parameterType="Long">
         delete
         from mb_member_table

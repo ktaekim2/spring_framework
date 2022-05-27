@@ -15,17 +15,15 @@
 </head>
 <body>
 <jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
-<h2>list.jsp</h2>
 <div class="container">
+    <h2>list.jsp</h2>
     <table class="table">
         <tr>
-            <th>id</th>
-            <th>memberId</th>
-            <th>memberPassword</th>
-            <th>memberName</th>
-            <th>memberEmail</th>
-            <th>memberMobile</th>
-            <th>memberProfile</th>
+            <th>회원번호</th>
+            <th>아이디</th>
+            <th>비밀번호</th>
+            <th>프로필사진</th>
+            <th>조회</th>
             <th>삭제</th>
         </tr>
         <c:forEach var="member" items="${memberList}">
@@ -33,11 +31,9 @@
                 <td>${member.id}</td>
                 <td>${member.memberId}</td>
                 <td>${member.memberPassword}</td>
-                <td>${member.memberName}</td>
-                <td>${member.memberEmail}</td>
-                <td>${member.memberMobile}</td>
                 <td><img src="${pageContext.request.contextPath}/upload/${member.memberProfile}"
                          alt="${member.memberProfile}" height="100" width="100"></td>
+                <td><a href="/member/detail?id=${member.id}">조회</a></td>
                 <td><a href="/member/delete?id=${member.id}">삭제</a></td>
             </tr>
         </c:forEach>

@@ -79,6 +79,13 @@ public class MemberController {
         return "/memberPages/list";
     }
 
+    @GetMapping("/detail")
+    public String findById(@RequestParam("id") Long id, Model model) {
+        MemberDTO memberDTO = memberService.findById(id);
+        model.addAttribute("member", memberDTO);
+        return "/memberPages/detail";
+    }
+
     @GetMapping("/delete")
     public String delete(@RequestParam("id") Long id) {
         memberService.delete(id);
