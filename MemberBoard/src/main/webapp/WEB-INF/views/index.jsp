@@ -25,8 +25,8 @@
             location.href = "/member/login";
         }
 
-        function findAll() {
-            location.href = "/board/findAll";
+        function paging() {
+            location.href = "/board/paging";
         }
     </script>
 </head>
@@ -38,7 +38,7 @@
             <h2 class="display-4 fw-normal">index.jsp</h2>
             <button class="btn btn-outline-success" onclick="save()">회원가입</button>
             <button class="btn btn-outline-success" onclick="login()">로그인</button>
-            <button class="btn btn-outline-success" onclick="findAll()">글목록</button>
+            <button class="btn btn-outline-success" onclick="paging()">글목록</button>
         </div>
     </div>
 </div>

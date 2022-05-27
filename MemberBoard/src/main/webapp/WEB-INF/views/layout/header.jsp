@@ -71,8 +71,8 @@
                     <li class="nav-item"><a href="/member/login" class="nav-link">로그인</a></li>
                 </c:when>
                 <c:otherwise>
-                    <li class="nav-item"><a href="/member/logout" class="nav-link">로그아웃</a></li><br>
-                    ${sessionScope.loginMemberId}님 안녕하세요.
+                    <li class="nav-item"><a href="/member/logout" class="nav-link">로그아웃</a></li>
+                    <li class="nav-item"><a class="nav-link">${sessionScope.loginMemberId}님 안녕하세요.</a></li>
                 </c:otherwise>
             </c:choose>
         </ul>

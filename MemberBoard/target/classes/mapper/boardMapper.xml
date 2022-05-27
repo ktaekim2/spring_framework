@@ -4,7 +4,11 @@
 
 
 <mapper namespace="Board">
-
+    <select id="pagingList" parameterType="java.util.HashMap" resultType="board">
+        select *
+        from mb_board_table
+        order by id desc limit #{start}, #{limit}
+    </select>
 </mapper>
 
 

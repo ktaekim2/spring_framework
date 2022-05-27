@@ -51,7 +51,7 @@ public class MemberController {
             System.out.println("로그인 성공");
             session.setAttribute("loginMemberId", loginMember.getMemberId());
             session.setAttribute("loginId", loginMember.getId());
-            return "/boardPages/list";
+            return "redirect:/board/paging";
         } else {
             System.out.println("로그인 실패");
             return "/memberPages/login";
@@ -64,4 +64,6 @@ public class MemberController {
         System.out.println("로그아웃 성공");
         return "index";
     }
+
+
 }
