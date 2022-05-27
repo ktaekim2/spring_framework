@@ -4,10 +4,12 @@ import com.its.memberBoard.dto.MemberDTO;
 import com.its.memberBoard.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 @Controller
 @RequestMapping("/member")
@@ -65,5 +67,16 @@ public class MemberController {
         return "index";
     }
 
+    @GetMapping("/admin")
+    public String admin() {
+        return "/memberPages/admin";
+    }
+
+    @GetMapping("/findAll")
+    public String findAll(Model model) {
+        List<MemberDTO> memberDTOList = memberService.findAll();
+        model.addAttribute("memberList", memberDTOList);
+        return "/memberPages/list";
+    }
 
 }

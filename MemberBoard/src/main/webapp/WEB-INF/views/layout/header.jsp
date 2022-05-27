@@ -70,6 +70,11 @@
                 <c:when test="${sessionScope.loginMemberId eq null}">
                     <li class="nav-item"><a href="/member/login" class="nav-link">로그인</a></li>
                 </c:when>
+                <c:when test="${sessionScope.loginMemberId eq 'admin'}">
+                    <li class="nav-item"><a href="/member/logout" class="nav-link">로그아웃</a></li>
+                    <li class="nav-item"><a class="nav-link">${sessionScope.loginMemberId}님 안녕하세요.</a></li>
+                    <li class="nav-item"><a href="/member/admin" class="nav-link">관리자 페이지</a></li>
+                </c:when>
                 <c:otherwise>
                     <li class="nav-item"><a href="/member/logout" class="nav-link">로그아웃</a></li>
                     <li class="nav-item"><a class="nav-link">${sessionScope.loginMemberId}님 안녕하세요.</a></li>

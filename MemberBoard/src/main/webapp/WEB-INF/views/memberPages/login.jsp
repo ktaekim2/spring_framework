@@ -14,13 +14,23 @@
             display: block;
         }
     </style>
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+    <script src="/resources/js/jquery.js"></script>
 </head>
 <body>
-<h2>login.jsp</h2>
-<form action="/member/login" method="post">
-    아이디<input type="text" name="memberId">
-    비밀번호<input type="password" name="memberPassword">
-    로그인<input type="submit">
-</form>
+<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <h2>login.jsp</h2>
+            <form action="/member/login" method="post">
+                <input type="text" name="memberId" placeholder="아이디"><br>
+                <input type="password" name="memberPassword" placeholder="비밀번호"><br>
+                <input type="submit" value="로그인">
+            </form>
+        </div>
+    </div>
+</div>
+<jsp:include page="../layout/footer.jsp" flush="false"></jsp:include>
 </body>
 </html>

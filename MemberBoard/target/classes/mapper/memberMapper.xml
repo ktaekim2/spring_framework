@@ -18,7 +18,13 @@
     <select id="login" parameterType="member" resultType="member">
         select *
         from mb_member_table
-        where memberId = #{memberId} and memberPassword = #{memberPassword}
+        where memberId = #{memberId}
+          and memberPassword = #{memberPassword}
+    </select>
+
+    <select id="findAll" resultType="member">
+        select *
+        from mb_member_table;
     </select>
 </mapper>
 
