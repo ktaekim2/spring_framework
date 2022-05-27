@@ -26,4 +26,9 @@ public class BoardController {
 //        model.addAttribute("paging", pageDTO);
         return "/boardPages/pagingList";
     }
+
+    @GetMapping("/save")
+    public String saveForm() {
+        return "/boardPages/save";
+    }
 }

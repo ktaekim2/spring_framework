@@ -14,8 +14,14 @@
 </head>
 <body>
 <jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
-<h2>admin.jsp</h2>
-<a href="/member/findAll">회원목록 조회</a>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <h2 class="display-4 fw-normal">admin.jsp</h2>
+            <a href="/member/findAll">회원목록 조회</a>
+        </div>
+    </div>
+</div>
 <jsp:include page="../layout/footer.jsp" flush="false"></jsp:include>
 </body>
 </html>
